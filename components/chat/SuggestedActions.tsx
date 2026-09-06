@@ -9,7 +9,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp, buttonPress, hoverScale } from "@/lib/animations";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 const ACTIONS = [
   {
@@ -62,8 +62,8 @@ export function SuggestedActions({ onSelect, className }: SuggestedActionsProps)
           key={id}
           type="button"
           variants={fadeInUp}
-          whileHover={hoverScale.hover}
-          whileTap={buttonPress.press}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.95 }}
           transition={{ delay: index * 0.05 }}
           onClick={() => onSelect(prompt)}
           className={cn(
